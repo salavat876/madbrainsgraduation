@@ -49,6 +49,15 @@ a {
 .modal-footer__subscribe-btn {
   flex: 1;
 }
+.volunteer__title{
+  text-align: center;
+}
+.volunteer__sub-title{
+  margin: 0 auto;
+  font-size: 30px;
+  width: 80%;
+  text-align: center;
+}
 .volunteer-container {
   flex-direction: row;
   align-items: center;
