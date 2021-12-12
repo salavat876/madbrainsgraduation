@@ -43,6 +43,33 @@ a {
 .appBar {
   background-color: #fff;
 }
+.registration-input {
+  display: flex;
+}
+.modal-footer__subscribe-btn {
+  flex: 1;
+}
+.volunteer-container {
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: none;
+  width: 100%;
+}
+.volunteer_img {
+  width: 35%;
+  font-size: 0;
+}
+.volunteer-container:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.back-icon {
+  padding-left: 20px;
+  background-position: left;
+  background-image: url("./img/back-icon.svg");
+  background-repeat: no-repeat;
+}
 footer {
   width: 100%;
   display: flex;

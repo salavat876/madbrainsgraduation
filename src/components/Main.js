@@ -1,30 +1,59 @@
 import React from "react"
-import { Card, Col, Container, Row } from "react-bootstrap"
+import {
+  Alert,
+  Card,
+  Col,
+  Container,
+  ListGroup,
+  Row,
+} from "react-bootstrap"
 import { Map, YMaps } from "react-yandex-maps"
 
 function Main() {
   return (
     <Container style={{ marginTop: "1em" }}>
       <Row>
-        <Col sm={7}>
+        <Col lg={7} sm={7}>
           <Card style={{ height: "100%" }}>
             <Card.Body>
               <Card.Title>Состояние на сегодня</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make
-                up the bulk of the card's content.
+                <Alert variant="warning">
+                  <Alert.Heading>Гололед!!!</Alert.Heading>
+                  <p>
+                    Change this and that and try again. Duis mollis, est
+                    non commodo luctus, nisi erat porttitor ligula, eget
+                    lacinia odio sem nec elit. Cras mattis consectetur
+                    purus sit amet fermentum.
+                  </p>
+                </Alert>
+                <Alert variant="danger">
+                  <Alert.Heading>Авария на Московском шоссе</Alert.Heading>
+                  <p>
+                    Change this and that and try again. Duis mollis, est
+                    non commodo luctus, nisi erat porttitor ligula, eget
+                    lacinia odio sem nec elit. Cras mattis consectetur
+                    purus sit amet fermentum.
+                  </p>
+                </Alert>
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
-        <Col sm={5}>
-          <Card>
+        <Col lg={5} sm={5}>
+          <Card style={{ minHeight: "100%" }}>
             <Card.Body>
-              <Card.Title>Запланнированные мероприятия</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make
-                up the bulk of the card's content.
-              </Card.Text>
+              <Card.Title>Запланированные мероприятия</Card.Title>
+              <Card style={{ width: "18rem" }}>
+                <ListGroup variant="flush">
+                  <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                  <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                </ListGroup>
+              </Card>
             </Card.Body>
           </Card>
         </Col>
