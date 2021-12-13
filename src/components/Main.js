@@ -7,14 +7,14 @@ import {
   ListGroup,
   Row,
 } from "react-bootstrap"
-import { Map, YMaps } from "react-yandex-maps"
+import {Map, YMaps, ZoomControl} from "react-yandex-maps"
 
 function Main() {
   return (
-    <Container style={{ marginTop: "1em" }}>
+    <Container className="margin-top1">
       <Row>
         <Col lg={7} sm={7}>
-          <Card style={{ height: "100%" }}>
+          <Card className="height100">
             <Card.Body>
               <Card.Title>Состояние на сегодня</Card.Title>
               <Card.Text>
@@ -41,10 +41,10 @@ function Main() {
           </Card>
         </Col>
         <Col lg={5} sm={5}>
-          <Card style={{ minHeight: "100%" }}>
-            <Card.Body>
+          <Card className="min-height100">
+            <Card.Body >
               <Card.Title>Запланированные мероприятия</Card.Title>
-              <Card style={{ width: "18rem" }}>
+              <Card>
                 <ListGroup variant="flush">
                   <ListGroup.Item>Cras justo odio</ListGroup.Item>
                   <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
@@ -59,16 +59,18 @@ function Main() {
         </Col>
       </Row>
       <Row>
-        <Container style={{ marginTop: "1em" }}>
-          <Card style={{ minHeight: "487px" }}>
-            <Card.Body style={{ padding: 15 }}>
+        <Container className="margin-top1">
+          <Card className="yandex-map__container">
+            <Card.Body className="yandex-map__body">
               <Card.Title>Чрезвычайные ситуации на карте</Card.Title>
               <YMaps>
                 <Map
-                  defaultState={{ center: [55.75, 37.57], zoom: 9 }}
+                  defaultState={{ center: [55.75, 37.57], zoom: 9,behaviors: ["drag", "dblClickZoom", "rightMouseButtonMagnifier", "multiTouch"] }}
                   width
                   height="400px"
-                />
+                >
+                  <ZoomControl options={{ float: 'right' }} />
+                </Map>
               </YMaps>
             </Card.Body>
           </Card>

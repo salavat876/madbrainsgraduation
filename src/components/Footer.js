@@ -1,5 +1,6 @@
 import React from "react"
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap"
+import {Link} from "react-router-dom";
 
 function Footer() {
   return (
@@ -8,17 +9,17 @@ function Footer() {
         <Row>
           <Col>
             <Navbar bg="dark" variant="dark">
-              <Navbar.Brand href="#home">Главная</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link href="#home">События</Nav.Link>
-                <Nav.Link href="#features">Волонтерство</Nav.Link>
+                <Nav.Link><Link className="footer__navigation-item" to="/">Главная</Link></Nav.Link>
+                <Nav.Link><Link className="footer__navigation-item" to="/news">События</Link></Nav.Link>
+                <Nav.Link><Link className="footer__navigation-item" to="volunteer">Волонтерство</Link></Nav.Link>
               </Nav>
             </Navbar>
             <div className="footer__phone">01 или 112</div>
             <div className="footer__subline">
               Единый телефон пожарных и спасателей
             </div>
-            <div className="footer__phone" style={{ marginTop: "1em" }}>
+            <div className="footer__phone margin-top1">
               {" "}
               <a
                 className="footer__phone href-white"
@@ -32,12 +33,13 @@ function Footer() {
           <Col>
             <Container className="footer-tablet">
               <div className="footer-tablet__title">Ссылки</div>
-              <div style={{ marginTop: "1em" }}>
+              <div className="margin-top1">
                 <p>
                   <a
                     rel="noreferrer"
                     target="_blank"
                     href="https://www.gosuslugi.ru/"
+                    className="footer-link"
                   >
                     Портал ГосУслуг
                   </a>
@@ -47,6 +49,7 @@ function Footer() {
                     rel="noreferrer"
                     target="_blank"
                     href="https://www.mchs.gov.ru/"
+                    className="footer-link"
                   >
                     МЧС
                   </a>
