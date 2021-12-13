@@ -1,7 +1,7 @@
-import React from "react"
-import { Card, Col, Container, Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
-const arr = [1, 2, 3, 4, 5, 6, 7]
+import React from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+const arr = [1, 2, 3, 4, 5, 6, 7];
 
 function News() {
   return (
@@ -27,7 +27,7 @@ function News() {
         </Col>
       </Row>
     </Container>
-  )
+  );
 }
 
-export default News
+export default News;

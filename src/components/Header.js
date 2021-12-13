@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import {
   Navbar,
   Container,
@@ -6,52 +6,52 @@ import {
   Button,
   Modal,
   Form,
-} from "react-bootstrap"
-import { Link } from "react-router-dom"
-import { Map, Placemark, YMaps } from "react-yandex-maps"
-import axios from "axios"
-import { API_KEY } from "../consts"
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Map, Placemark, YMaps } from "react-yandex-maps";
+import axios from "axios";
+import { API_KEY } from "../consts";
 
 function Header() {
-  const [show, setShow] = useState(false)
-  const [defaultCor, setDefaultCoor] = useState([54.314192, 48.403132])
-  const [userInput, setUserInput] = useState("")
+  const [show, setShow] = useState(false);
+  const [defaultCor, setDefaultCoor] = useState([54.314192, 48.403132]);
+  const [userInput, setUserInput] = useState("");
 
   const handleUserInput = (e) => {
-    setUserInput(e.target.value)
-  }
+    setUserInput(e.target.value);
+  };
   const handleUserSearch = (e) => {
-    e.preventDefault()
-    getAddress()
-    console.log(userInput)
-    setUserInput(" ")
-  }
+    e.preventDefault();
+    getAddress();
+    console.log(userInput);
+    setUserInput(" ");
+  };
   async function getAddress() {
     await axios
       .get(
         `https://geocode-maps.yandex.ru/1.x/?apikey=${API_KEY}&format=json&geocode=${userInput}`
       )
       .then((res) => {
-        console.log(res)
+        console.log(res);
         if (
           res.data.response.GeoObjectCollection.featureMember.length === 0
         ) {
-          console.log("-")
+          console.log("-");
         } else {
           let response =
             res.data.response.GeoObjectCollection.featureMember[0]
-              .GeoObject.Point.pos
-          let stringCoords = response.split(" ")
-          let coords = [+stringCoords[1], +stringCoords[0]]
-          setDefaultCoor(coords)
-          console.log("+")
+              .GeoObject.Point.pos;
+          let stringCoords = response.split(" ");
+          let coords = [+stringCoords[1], +stringCoords[0]];
+          setDefaultCoor(coords);
+          console.log("+");
         }
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
   }
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <header>
       <Navbar className="appBar" expand="lg">
@@ -143,7 +143,7 @@ function Header() {
         </Modal.Footer>
       </Modal>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

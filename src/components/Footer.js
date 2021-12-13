@@ -1,6 +1,6 @@
-import React from "react"
-import { Col, Container, Nav, Navbar, Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import React from "react";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -84,7 +84,7 @@ function Footer() {
         </p>
       </Container>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

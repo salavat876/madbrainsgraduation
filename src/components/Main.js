@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Alert,
   Card,
@@ -6,8 +6,8 @@ import {
   Container,
   ListGroup,
   Row,
-} from "react-bootstrap"
-import { Map, YMaps, ZoomControl } from "react-yandex-maps"
+} from "react-bootstrap";
+import { Map, YMaps, ZoomControl } from "react-yandex-maps";
 
 function Main() {
   return (
@@ -86,7 +86,7 @@ function Main() {
         </Container>
       </Row>
     </Container>
-  )
+  );
 }
 
-export default Main
+export default Main;

@@ -1,5 +1,5 @@
-import React from "react"
-import { Card, Col, Container, Row } from "react-bootstrap"
+import React from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
 function Volunteer() {
   return (
     <Container fluid="lg">
@@ -72,6 +72,6 @@ function Volunteer() {
         </Row>
       </Container>
     </Container>
-  )
+  );
 }
-export default Volunteer
+export default Volunteer;
