@@ -7,7 +7,7 @@ import {
   ListGroup,
   Row,
 } from "react-bootstrap"
-import {Map, YMaps, ZoomControl} from "react-yandex-maps"
+import { Map, YMaps, ZoomControl } from "react-yandex-maps"
 
 function Main() {
   return (
@@ -42,7 +42,7 @@ function Main() {
         </Col>
         <Col lg={5} sm={5}>
           <Card className="min-height100">
-            <Card.Body >
+            <Card.Body>
               <Card.Title>Запланированные мероприятия</Card.Title>
               <Card>
                 <ListGroup variant="flush">
@@ -65,11 +65,20 @@ function Main() {
               <Card.Title>Чрезвычайные ситуации на карте</Card.Title>
               <YMaps>
                 <Map
-                  defaultState={{ center: [55.75, 37.57], zoom: 9,behaviors: ["drag", "dblClickZoom", "rightMouseButtonMagnifier", "multiTouch"] }}
+                  defaultState={{
+                    center: [55.75, 37.57],
+                    zoom: 9,
+                    behaviors: [
+                      "drag",
+                      "dblClickZoom",
+                      "rightMouseButtonMagnifier",
+                      "multiTouch",
+                    ],
+                  }}
                   width
                   height="400px"
                 >
-                  <ZoomControl options={{ float: 'right' }} />
+                  <ZoomControl options={{ float: "right" }} />
                 </Map>
               </YMaps>
             </Card.Body>

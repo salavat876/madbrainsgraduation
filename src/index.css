@@ -6,7 +6,7 @@ html,
 body {
   height: 100%;
 }
-a{
+a {
   outline: none;
 }
 
@@ -46,29 +46,29 @@ a {
 .appBar {
   background-color: #fff;
 }
-.margin-top1{
+.margin-top1 {
   margin-top: 1em;
 }
 
-.flex1{
+.flex1 {
   flex: 1;
 }
-.height100{
+.height100 {
   height: 100%;
 }
-.min-height100{
+.min-height100 {
   min-height: 100%;
 }
-.padding15{
+.padding15 {
   padding: 15px;
 }
-.navigation-item{
+.navigation-item {
   color: #000;
 }
-.navigation-item:hover{
+.navigation-item:hover {
   color: black;
 }
-.yandex-map__container{
+.yandex-map__container {
   min-height: 487px;
 }
 .registration-input {
@@ -142,17 +142,17 @@ footer {
   color: #a7a7a7;
 }
 
-.footer__navigation-item{
-  color:#ffffff;
+.footer__navigation-item {
+  color: #ffffff;
 }
 
-.footer__navigation-item:hover{
+.footer__navigation-item:hover {
   color: #a7a7a7;
 }
 
-.footer-link{
-  color:#fff;
+.footer-link {
+  color: #fff;
 }
-.footer-link:hover{
+.footer-link:hover {
   color: #a7a7a7;
 }

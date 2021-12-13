@@ -61,17 +61,23 @@ function Header() {
             <Nav className="me-auto">
               <Nav.Item>
                 <Nav.Link>
-                  <Link className="navigation-item" to="/">Главная</Link>
+                  <Link className="navigation-item" to="/">
+                    Главная
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link>
-                  <Link className="navigation-item" to="news">События</Link>
+                  <Link className="navigation-item" to="news">
+                    События
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link>
-                  <Link className="navigation-item" to="volunteer">Волонтерство</Link>
+                  <Link className="navigation-item" to="volunteer">
+                    Волонтерство
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
             </Nav>
@@ -93,7 +99,11 @@ function Header() {
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Ваш номер телефона</Form.Label>
-              <Form.Control type="tel" pattern="7[0-9]{3}-[0-9]{3}" placeholder="телефон" />
+              <Form.Control
+                type="tel"
+                pattern="7[0-9]{3}-[0-9]{3}"
+                placeholder="телефон"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Ваш адрес</Form.Label>
@@ -103,10 +113,7 @@ function Header() {
                   type="text"
                   placeholder="Введите ваш адрес"
                 />
-                <Button
-                  variant="primary"
-                  onClick={handleUserSearch}
-                >
+                <Button variant="primary" onClick={handleUserSearch}>
                   Найти
                 </Button>
               </div>
