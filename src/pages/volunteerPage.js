@@ -1,6 +1,11 @@
-import React from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import React, {useState} from "react";
+import {Button, Card, Col, Container, Modal, Row} from "react-bootstrap";
 function Volunteer() {
+  const [show, setShow] = useState(false);
+  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Container fluid="lg">
       <h1 className="volunteer__title">Стать волонтером</h1>
@@ -68,8 +73,22 @@ function Volunteer() {
                 </Card.Text>
               </Card.Body>
             </Card>
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Modal heading</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button>
+                <Button variant="primary" onClick={handleClose}>
+                  Save Changes
+                </Button>
+              </Modal.Footer>
+            </Modal>
             <div className="volunteer_contaniner">
-              <Button className="volunteer__button">
+              <Button className="volunteer__button" onClick={handleShow}>
                 Стать волонтером
               </Button>
             </div>
