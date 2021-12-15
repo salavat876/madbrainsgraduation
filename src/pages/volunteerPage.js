@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 function Volunteer() {
   return (
     <Container fluid="lg">
@@ -68,6 +68,11 @@ function Volunteer() {
                 </Card.Text>
               </Card.Body>
             </Card>
+            <div className="volunteer_contaniner">
+              <Button className="volunteer__button">
+                Стать волонтером
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>

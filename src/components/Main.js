@@ -17,7 +17,6 @@ function Main() {
           <Card className="height100">
             <Card.Body>
               <Card.Title>Состояние на сегодня</Card.Title>
-              <Card.Text>
                 <Alert variant="warning">
                   <Alert.Heading>Гололед!!!</Alert.Heading>
                   <p>
@@ -36,7 +35,6 @@ function Main() {
                     purus sit amet fermentum.
                   </p>
                 </Alert>
-              </Card.Text>
             </Card.Body>
           </Card>
         </Col>

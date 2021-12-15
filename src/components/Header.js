@@ -59,27 +59,15 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Item>
-                <Nav.Link>
-                  <Link className="navigation-item" to="/">
-                    Главная
-                  </Link>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link>
-                  <Link className="navigation-item" to="news">
-                    События
-                  </Link>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link>
-                  <Link className="navigation-item" to="volunteer">
-                    Волонтерство
-                  </Link>
-                </Nav.Link>
-              </Nav.Item>
+              <Link className="navigation-item" to="/">
+                Главная
+              </Link>
+              <Link className="navigation-item" to="news">
+                События
+              </Link>
+              <Link className="navigation-item" to="volunteer">
+                Волонтерство
+              </Link>
             </Nav>
           </Navbar.Collapse>
           <Button variant="primary" onClick={handleShow}>

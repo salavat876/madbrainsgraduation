@@ -10,21 +10,15 @@ function Footer() {
           <Col>
             <Navbar bg="dark" variant="dark">
               <Nav className="me-auto">
-                <Nav.Link>
-                  <Link className="footer__navigation-item" to="/">
-                    Главная
-                  </Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link className="footer__navigation-item" to="/news">
-                    События
-                  </Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link className="footer__navigation-item" to="volunteer">
-                    Волонтерство
-                  </Link>
-                </Nav.Link>
+                <Link className="footer__navigation-item" to="/">
+                  Главная
+                </Link>
+                <Link className="footer__navigation-item" to="/news">
+                  События
+                </Link>
+                <Link className="footer__navigation-item" to="volunteer">
+                  Волонтерство
+                </Link>
               </Nav>
             </Navbar>
             <div className="footer__phone">01 или 112</div>
