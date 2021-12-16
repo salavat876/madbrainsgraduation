@@ -9,14 +9,11 @@ function News() {
     <Container fluid="sm">
       <Row>
         <Container className="news-container">
-          <Link to="/" className="back-icon">
-            <img alt="back icon" src={back_icon} />
-            Главная
-          </Link>
+          <h1 className="news__title">Все события</h1>
           <Row>
             <Col>
               {arr.map((item) => (
-                <Card key={item / 2}>
+                <Card key={item / 2} className="news-card">
                   <Card.Body>
                     <Card.Title>Ремонт дороги на Ленина</Card.Title>
                     <Card.Text>

@@ -6,7 +6,7 @@ import "./index.css";
 import "normalize-css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import {store} from "./redux";
+import { store } from "./redux";
 
 ReactDOM.render(
   <Provider store={store}>

@@ -11,11 +11,22 @@ import { Link } from "react-router-dom";
 import { Map, Placemark, YMaps } from "react-yandex-maps";
 import axios from "axios";
 import { API_KEY } from "../consts";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  hideUserModal,
+  showUserModal,
+  toggleUserModal,
+} from "../redux/toolkitSlice";
 
 function Header() {
-  const [show, setShow] = useState(false);
   const [defaultCor, setDefaultCoor] = useState([54.314192, 48.403132]);
   const [userInput, setUserInput] = useState("");
+  const { openUserModal } = useSelector(({ toolkit }) => toolkit);
+  const dispatch = useDispatch();
+
+  const toggleUserOpenModal = () => {
+    dispatch(toggleUserModal(openUserModal));
+  };
 
   const handleUserInput = (e) => {
     setUserInput(e.target.value);
@@ -49,9 +60,6 @@ function Header() {
       })
       .catch((err) => console.log(err));
   }
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <header>
       <Navbar className="appBar" expand="lg">
@@ -70,12 +78,12 @@ function Header() {
               </Link>
             </Nav>
           </Navbar.Collapse>
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="primary" onClick={toggleUserOpenModal}>
             Подписаться на рассылку
           </Button>
         </Container>
       </Navbar>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={openUserModal} onHide={toggleUserOpenModal}>
         <Modal.Header closeButton>
           <Modal.Title>Подпишитесь на рассылку</Modal.Title>
         </Modal.Header>
@@ -100,6 +108,7 @@ function Header() {
                   onChange={handleUserInput}
                   type="text"
                   placeholder="Введите ваш адрес"
+                  style={{ marginRight: 5 }}
                 />
                 <Button variant="primary" onClick={handleUserSearch}>
                   Найти

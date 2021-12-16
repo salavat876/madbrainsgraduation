@@ -8,6 +8,7 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
+import clickImg from "../assets/img/click-2383.svg";
 function Volunteer() {
   const [show, setShow] = useState(false);
 
@@ -119,9 +120,13 @@ function Volunteer() {
               </Modal.Footer>
             </Modal>
             <div className="volunteer_contaniner">
-              <Button className="volunteer__button" onClick={handleShow}>
-                Стать волонтером
-              </Button>
+              <p className="volunteer-action">
+                Вы можете присоединиться к волонтерам.{" "}
+                <a className="volunteer-action__auth" onClick={handleShow}>
+                  {" "}
+                  Зарегистрируйтесь
+                </a>
+              </p>
             </div>
           </Col>
         </Row>
