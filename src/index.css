@@ -124,6 +124,10 @@ a {
 .back-icon img {
   margin-right: 4px;
 }
+
+.news-container {
+  max-width: 1050px;
+}
 footer {
   width: 100%;
   display: flex;
@@ -177,6 +181,6 @@ footer {
 .footer-link:hover {
   color: #a7a7a7;
 }
-.me-auto{
+.me-auto {
   margin-top: 7px;
 }

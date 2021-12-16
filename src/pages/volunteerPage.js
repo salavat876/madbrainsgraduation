@@ -1,8 +1,16 @@
-import React, {useState} from "react";
-import {Button, Card, Col, Container, Modal, Row} from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Modal,
+  Row,
+} from "react-bootstrap";
 function Volunteer() {
   const [show, setShow] = useState(false);
-  
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -75,13 +83,36 @@ function Volunteer() {
             </Card>
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Стать волонтером</Modal.Title>
               </Modal.Header>
-              <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+              <Modal.Body>
+                <Form>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Ваше имя</Form.Label>
+                    <Form.Control type="text" placeholder="ФИО" />
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Ваш номер телефона</Form.Label>
+                    <Form.Control
+                      type="tel"
+                      pattern="7[0-9]{3}-[0-9]{3}"
+                      placeholder="телефон"
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlTextarea1"
+                  >
+                    <Form.Label>Напишите, чем Вы занимаетесь</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      rows={3}
+                      style={{ resize: "none" }}
+                    />
+                  </Form.Group>
+                </Form>
+              </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
-                </Button>
                 <Button variant="primary" onClick={handleClose}>
                   Save Changes
                 </Button>

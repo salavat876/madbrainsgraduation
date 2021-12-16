@@ -8,11 +8,11 @@ function News() {
   return (
     <Container fluid="sm">
       <Row>
-        <Link to="/" className="back-icon">
-          <img alt="back icon" src={back_icon} />
-          Главная
-        </Link>
-        <Container style={{ maxWidth: "1100px" }}>
+        <Container className="news-container">
+          <Link to="/" className="back-icon">
+            <img alt="back icon" src={back_icon} />
+            Главная
+          </Link>
           <Row>
             <Col>
               {arr.map((item) => (
