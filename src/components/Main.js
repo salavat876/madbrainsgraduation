@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Alert,
   Card,
@@ -13,8 +13,14 @@ import {
   YMaps,
   ZoomControl,
 } from "react-yandex-maps";
+import axios from "axios";
 
 function Main() {
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/event/get")
+      .then((res) => console.log(res.data));
+  }, []);
   return (
     <Container className="margin-top1">
       <Row>

@@ -31,4 +31,6 @@ export const {
   showUserModal,
   hideUserModal,
   toggleUserModal,
+  toggleVolModal,
+  toggleModal,
 } = toolkitSlice.actions;

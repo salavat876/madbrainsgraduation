@@ -1,7 +1,5 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import back_icon from "../assets/img/back-icon.svg";
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
 function News() {

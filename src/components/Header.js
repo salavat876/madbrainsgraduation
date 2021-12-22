@@ -12,11 +12,8 @@ import { Map, Placemark, YMaps } from "react-yandex-maps";
 import axios from "axios";
 import { API_KEY } from "../consts";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  hideUserModal,
-  showUserModal,
-  toggleUserModal,
-} from "../redux/toolkitSlice";
+import { toggleUserModal } from "../redux/toolkitSlice";
+import ModalWindow from "./ModalWindow";
 
 function Header() {
   const [defaultCor, setDefaultCoor] = useState([54.314192, 48.403132]);
@@ -78,67 +75,52 @@ function Header() {
               </Link>
             </Nav>
           </Navbar.Collapse>
-          <Button variant="primary" onClick={toggleUserOpenModal}>
+          <Button onClick={toggleUserOpenModal}>
             Подписаться на рассылку
           </Button>
+          <ModalWindow openUserModal={openUserModal}>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Ваше имя</Form.Label>
+                <Form.Control type="text" placeholder="ФИО" />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Ваш номер телефона</Form.Label>
+                <Form.Control
+                  type="tel"
+                  pattern="7[0-9]{3}-[0-9]{3}"
+                  placeholder="телефон"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Ваш адрес</Form.Label>
+                <div className="registration-input">
+                  <Form.Control
+                    onChange={handleUserInput}
+                    type="text"
+                    placeholder="Введите ваш адрес"
+                    style={{ marginRight: 5 }}
+                  />
+                  <Button variant="primary" onClick={handleUserSearch}>
+                    Найти
+                  </Button>
+                </div>
+              </Form.Group>
+              <YMaps>
+                <Map
+                  width={"100%"}
+                  state={{
+                    center: defaultCor,
+                    zoom: 15,
+                  }}
+                >
+                  <Placemark geometry={defaultCor} />
+                </Map>
+              </YMaps>
+            </Form>
+          </ModalWindow>
         </Container>
       </Navbar>
-      <Modal show={openUserModal} onHide={toggleUserOpenModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Подпишитесь на рассылку</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Ваше имя</Form.Label>
-              <Form.Control type="text" placeholder="ФИО" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Ваш номер телефона</Form.Label>
-              <Form.Control
-                type="tel"
-                pattern="7[0-9]{3}-[0-9]{3}"
-                placeholder="телефон"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Ваш адрес</Form.Label>
-              <div className="registration-input">
-                <Form.Control
-                  onChange={handleUserInput}
-                  type="text"
-                  placeholder="Введите ваш адрес"
-                  style={{ marginRight: 5 }}
-                />
-                <Button variant="primary" onClick={handleUserSearch}>
-                  Найти
-                </Button>
-              </div>
-            </Form.Group>
-            <YMaps>
-              <Map
-                width={"100%"}
-                state={{
-                  center: defaultCor,
-                  zoom: 15,
-                }}
-              >
-                <Placemark geometry={defaultCor} />
-              </Map>
-            </YMaps>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            className="flex1"
-            variant="primary"
-            type="submit"
-            onClick={handleUserSearch}
-          >
-            Подписаться на рассылку
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </header>
   );
 }
