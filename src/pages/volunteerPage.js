@@ -1,16 +1,7 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Modal,
-  Row,
-} from "react-bootstrap";
+import React from "react";
+import { Card, Col, Row, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleUserModal, toggleVolModal } from "../redux/toolkitSlice";
-import ModalWindow from "../components/ModalWindow";
+import { toggleVolModal } from "../redux/toolkitSlice";
 import ModalVolunteer from "../components/ModalVolunteer";
 
 function Volunteer() {

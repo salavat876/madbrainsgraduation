@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Button,
-  Modal,
-  Form,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Map, Placemark, YMaps } from "react-yandex-maps";
 import axios from "axios";
 import { API_KEY } from "../consts";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleUserModal } from "../redux/toolkitSlice";
-import ModalWindow from "./ModalWindow";
+import ModalUser from "./ModalWindow";
+import { YMaps, Map, Placemark } from "react-yandex-maps";
 
 function Header() {
   const [defaultCor, setDefaultCoor] = useState([54.314192, 48.403132]);
@@ -78,47 +71,7 @@ function Header() {
           <Button onClick={toggleUserOpenModal}>
             Подписаться на рассылку
           </Button>
-          <ModalWindow openUserModal={openUserModal}>
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Ваше имя</Form.Label>
-                <Form.Control type="text" placeholder="ФИО" />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label>Ваш номер телефона</Form.Label>
-                <Form.Control
-                  type="tel"
-                  pattern="7[0-9]{3}-[0-9]{3}"
-                  placeholder="телефон"
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Ваш адрес</Form.Label>
-                <div className="registration-input">
-                  <Form.Control
-                    onChange={handleUserInput}
-                    type="text"
-                    placeholder="Введите ваш адрес"
-                    style={{ marginRight: 5 }}
-                  />
-                  <Button variant="primary" onClick={handleUserSearch}>
-                    Найти
-                  </Button>
-                </div>
-              </Form.Group>
-              <YMaps>
-                <Map
-                  width={"100%"}
-                  state={{
-                    center: defaultCor,
-                    zoom: 15,
-                  }}
-                >
-                  <Placemark geometry={defaultCor} />
-                </Map>
-              </YMaps>
-            </Form>
-          </ModalWindow>
+          <ModalUser show={openUserModal}></ModalUser>
         </Container>
       </Navbar>
     </header>
