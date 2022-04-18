@@ -4,9 +4,9 @@ const toolkitSlice = createSlice({
   name: "toolkit",
   initialState: {
     openUserModal: false,
-    openVolModal: false,
-    count: 0,
-    todos: [],
+    isAdmin: false,
+    adminLogin: "root",
+    adminPass: "root",
   },
   reducers: {
     increment(state) {
@@ -21,6 +21,9 @@ const toolkitSlice = createSlice({
     toggleVolModal(state) {
       state.openVolModal = !state.openVolModal;
     },
+    setAdmin(state) {
+      state.isAdmin = !state.isAdmin;
+    },
   },
 });
 
@@ -33,4 +36,5 @@ export const {
   toggleUserModal,
   toggleVolModal,
   toggleModal,
+  setAdmin,
 } = toolkitSlice.actions;

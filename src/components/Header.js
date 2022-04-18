@@ -11,7 +11,7 @@ import { YMaps, Map, Placemark } from "react-yandex-maps";
 function Header() {
   const [defaultCor, setDefaultCoor] = useState([54.314192, 48.403132]);
   const [userInput, setUserInput] = useState("");
-  const { openUserModal } = useSelector(({ toolkit }) => toolkit);
+  const { openUserModal } = useSelector(({ app }) => app);
   const dispatch = useDispatch();
 
   const toggleUserOpenModal = () => {
