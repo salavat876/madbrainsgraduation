@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import Volunteer from "./pages/volunteerPage";
 import AdminPage from "./pages/AdminPage";
 import { useDispatch, useSelector } from "react-redux";
+import UGC from "./components/UGC";
 function App() {
   const { isAdmin } = useSelector(({ app }) => app);
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/news" element={<News />} />
           <Route exact path="/volunteer" element={<Volunteer />} />
           <Route exact path="/admin-login" element={<LoginPage />} />
+          <Route exact path="/ugc" element={<UGC/>}/>
           <Route
             exact
             path="/admin"

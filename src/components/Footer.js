@@ -16,8 +16,8 @@ function Footer() {
                 <Link className="footer__navigation-item" to="/news">
                   События
                 </Link>
-                <Link className="footer__navigation-item" to="volunteer">
-                  Волонтерство
+                <Link className="footer__navigation-item" to="ugc">
+                  Сообщить о проблеме
                 </Link>
               </Nav>
             </Navbar>

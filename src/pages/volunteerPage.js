@@ -5,7 +5,7 @@ import { toggleVolModal } from "../redux/toolkitSlice";
 import ModalVolunteer from "../components/ModalVolunteer";
 
 function Volunteer() {
-  const { openVolModal } = useSelector(({ toolkit }) => toolkit);
+  const { openVolModal } = useSelector(({ app }) => app);
   const dispatch = useDispatch();
 
   const toggleOpenModal = () => {

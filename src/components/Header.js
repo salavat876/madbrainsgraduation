@@ -63,8 +63,9 @@ function Header() {
               <Link className="navigation-item" to="news">
                 События
               </Link>
-              <Link className="navigation-item" to="volunteer">
-                Волонтерство
+          
+              <Link className="navigation-item" to="ugc">
+                Сообщить о проблеме
               </Link>
             </Nav>
           </Navbar.Collapse>

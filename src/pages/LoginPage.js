@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Card, Col, Container, Row, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setAdmin } from "../redux/toolkitSlice";
-import { useLocation, Navigate } from "react-router-dom";
-const arr = [1, 2, 3, 4, 5, 6, 7];
+import { useLocation, Navigate , Redirect} from "react-router-dom";
 
 function LoginPage() {
   const location = useLocation();
@@ -14,15 +13,12 @@ function LoginPage() {
   const dispatch = useDispatch();
 
   const submit = (e) => {
+    console.log(loginInput === adminLogin,passwordInput === adminPass)
     e.preventDefault();
-    if (!loginInput && !passwordInput) {
-      return;
-    } else {
-      if (loginInput === adminLogin && passwordInput === adminPass) {
-        dispatch(setAdmin(isAdmin));
-        return <Navigate to="/admin" from={location.pathname}/>
+    if (loginInput === adminLogin && passwordInput === adminPass) {
+      dispatch(setAdmin(isAdmin));
+      return window.location = "/admin"
       }
-    }
   };
   return (
     <Container fluid="sm">
